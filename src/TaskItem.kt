@@ -1,0 +1,1 @@
+data class TaskItem(val id: Int, var description : String, var isCompleted : Boolean )
