@@ -40,28 +40,45 @@ class MenuHandler(private val crud : ManageTask) {
     }
 
     fun updateTask() {
-        while (true){
-            print("1. Tandai Task (done)")
+
+        loopMenu@while (true){
+            print("Task berapa yang ingin anda ubah {id}: ")
+
+            println()
+            print("1. Tandai Task (selesai/tidak selesai)")
             print("2. Ubah deskripsi Task")
             print("3. Keluar menu update")
             print("Pilih menu di atas : ")
             val menu = readLine()?.toInt()
+
+
+            if(menu == 1) {
+                println("Tandai task selesai? {y/n}")
+                val taskIsCompleted = readLine().toString().trim()
+                var taskStatus = false
+                if(taskIsCompleted.equals("y", true)) {
+                    taskStatus = true
+                } else if (taskIsCompleted.equals("n", true)) {
+                    taskStatus = false
+                } else {
+                    println("Input tidak sesuai")
+//                    taskStatus =
+                }
+
+            }
+
         }
 
 
-        print("Task berapa yang ingin anda ubah? ")
-        val id = readLine()?.toInt() ?: -1
 
-        outerLoopUpdate@while (true) {
 
-        }
-        print("Masukkan deskripsi: ")
-        val description = readLine().toString().trim()
-
-        println("Apakah task sudah selesai? {true/false}")
-        val isCompleted : Boolean = readLine()?.toBoolean() ?: false
-
-        crud.updateTask(id, description, isCompleted)
+//        outerLoopUpdate@while (true) {
+//
+//        }
+//        print("Masukkan deskripsi: ")
+//        val description = readLine().toString().trim()
+//
+//        crud.updateTask(id, description, isCompleted)
     }
 
     fun showTaskDone() {
