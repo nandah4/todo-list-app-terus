@@ -68,10 +68,6 @@ class MenuHandler(private val crud : ManageTask) {
             }
 
         }
-
-
-
-
 //        outerLoopUpdate@while (true) {
 //
 //        }
